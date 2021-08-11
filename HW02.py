@@ -41,4 +41,6 @@ def article(href):
 href=find_href()
 exe=article(href)
 df = pd.DataFrame(exe, columns = ["中文名稱", "英文名稱",'上映日期','類型','簡介',])
-df   
+df
+
+df.to_csv('movie.csv',encoding = 'utf_8_sig')
