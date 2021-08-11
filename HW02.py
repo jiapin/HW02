@@ -24,7 +24,7 @@ def article(href):
         r = requests.get(url)
         so = BeautifulSoup(r.text)
         name_ch=so.find('h1').text.strip()
-        name_en=so.find('h3').text.strip()
+        name_en=so.find('h2').text.strip()
         date=so.find('div',class_= 'movie_intro_info_r').find('span').text.split('上映日期：')[1]
         types=''
         for c in so.find_all('div', class_="level_name_box"):
