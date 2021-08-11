@@ -36,4 +36,9 @@ def article(href):
         article=so.find('div',class_='gray_infobox_inner').find('span').text.strip()
         exesin=(name_ch,name_en,date,types,article)
         exe.append(exesin)
-    return exe        
+    return exe     
+
+href=find_href()
+exe=article(href)
+df = pd.DataFrame(exe, columns = ["中文名稱", "英文名稱",'上映日期','類型','簡介',])
+df   
